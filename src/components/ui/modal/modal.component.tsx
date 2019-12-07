@@ -159,6 +159,11 @@ export class Modal extends React.Component<ModalProps> {
   public render(): React.ReactNode {
     return this.renderMeasureNode();
   }
+
+  public componentWillUnmount(): void {
+    ModalService.hide(this.id);
+    this.id = '';
+  }
 }
 
 const styles = StyleSheet.create({
